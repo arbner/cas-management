@@ -1,8 +1,8 @@
 package org.apereo.cas.mgmt.config;
 
-import org.apereo.cas.configuration.CasConfigurationProperties;
 import org.apereo.cas.mgmt.CasManagementUtils;
 import org.apereo.cas.mgmt.authentication.CasUserProfileFactory;
+import org.apereo.cas.mgmt.configuration.CasManagementConfigurationProperties;
 import org.pac4j.cas.client.direct.DirectCasClient;
 import org.pac4j.cas.config.CasConfiguration;
 import org.pac4j.core.authorization.authorizer.Authorizer;
@@ -34,7 +34,7 @@ import java.util.List;
  * @since 5.2.0
  */
 @Configuration("casManagementAuthenticationConfiguration")
-@EnableConfigurationProperties(CasConfigurationProperties.class)
+@EnableConfigurationProperties(CasManagementConfigurationProperties.class)
 public class CasManagementAuthenticationConfiguration {
     private static final Logger LOGGER = LoggerFactory.getLogger(CasManagementAuthenticationConfiguration.class);
 
@@ -42,7 +42,7 @@ public class CasManagementAuthenticationConfiguration {
     private ServerProperties serverProperties;
 
     @Autowired
-    private CasConfigurationProperties casProperties;
+    private CasManagementConfigurationProperties casProperties;
 
     @Autowired
     @Qualifier("managementWebappAuthorizer")

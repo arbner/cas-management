@@ -1,5 +1,6 @@
 apply plugin: "war"
 apply plugin: "org.springframework.boot"
+apply plugin: "application"
 apply plugin: "com.moowork.node"
 
 description = "Apereo CAS Management Web Application"
@@ -99,10 +100,11 @@ task angularTest(type: NpmTask, dependsOn: 'npm_install', group: 'test', descrip
 }
 
 dependencies {
+    runtimeOnly project(":webapp-mgmt:cas-management-webapp-configuration")
     runtimeOnly project(":webapp-mgmt:cas-management-webapp-support")
     providedRuntime libraries.springboottomcat
     runtimeOnly libraries.groovy
     implementation libraries.thymeleaf
     implementation libraries.thymeleafdialect
-    implementation libraries.thymeleafboot
+    implementation libraries.springcloudconfigclient
 }

@@ -16,6 +16,7 @@ dependencies {
     implementation libraries.springcloudconfigclient
     implementation libraries.thymeleaf
 
+    implementation project(":webapp-mgmt:cas-management-webapp-configuration")
     implementation "org.apereo.cas:cas-server-core-api-authentication:$casVersion"
 
     implementation "org.apereo.cas:cas-server-core-util:$casVersion"
